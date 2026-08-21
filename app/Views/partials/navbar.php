@@ -63,7 +63,13 @@ if (!empty($profile['social_media'])) {
         <div class="flex justify-between items-center h-20">
             <!-- Brand Logo & School Identity -->
             <a href="<?= base_url('/') ?>" class="flex items-center space-x-3 group">
-                <img src="<?= get_image_url($profile['logo'] ?? null, 'logo') ?>" alt="Logo <?= esc($profile['school_name'] ?? 'Sekolah') ?>" class="h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                <?php if (!empty($profile['logo'])): ?>
+                    <img src="<?= base_url('uploads/profiles/' . $profile['logo']) ?>" alt="Logo" class="h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                <?php else: ?>
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                <?php endif; ?>
                 <div>
                     <span class="block text-lg sm:text-xl font-black tracking-tight text-slate-900 leading-tight group-hover:text-blue-600 transition">
                         <?= esc($profile['school_name'] ?? 'SMP Negeri 3 Abiansemal') ?>
@@ -205,3 +211,4 @@ if (!empty($profile['social_media'])) {
         </div>
     </div>
 </header>
+

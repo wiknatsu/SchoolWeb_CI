@@ -76,9 +76,11 @@
                 <!-- Logo -->
                 <div class="space-y-3">
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Logo Sekolah</label>
-                    <div class="h-16 w-32 p-2 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center">
-                        <img src="<?= get_image_url($profile['logo'] ?? null, 'logo') ?>" alt="Logo" class="max-h-full max-w-full object-contain">
-                    </div>
+                    <?php if (!empty($profile['logo'])): ?>
+                        <div class="h-16 w-32 p-2 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center">
+                            <img src="<?= base_url('uploads/profiles/' . $profile['logo']) ?>" alt="Logo" class="max-h-full max-w-full object-contain">
+                        </div>
+                    <?php endif; ?>
                     <input type="file" name="logo" accept="image/*" class="block w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700">
                 </div>
 
@@ -128,9 +130,11 @@
 
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Foto Resmi Kepala Sekolah</label>
-                    <div class="h-20 w-20 rounded-xl overflow-hidden mb-2 border border-slate-200">
-                        <img src="<?= get_image_url($profile['principal_photo'] ?? null, 'principal') ?>" alt="Kepsek" class="w-full h-full object-cover">
-                    </div>
+                    <?php if (!empty($profile['principal_photo'])): ?>
+                        <div class="h-20 w-20 rounded-xl overflow-hidden mb-2 border border-slate-200">
+                            <img src="<?= get_image_url($profile['principal_photo'], 'principal') ?>" alt="Kepsek" class="w-full h-full object-cover">
+                        </div>
+                    <?php endif; ?>
                     <input type="file" name="principal_photo" accept="image/*" class="block w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700">
                 </div>
             </div>

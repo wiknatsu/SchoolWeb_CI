@@ -11,7 +11,13 @@ if (!empty($profile['social_media'])) {
             <!-- Col 1: School Identity -->
             <div class="space-y-4">
                 <div class="flex items-center space-x-3">
-                    <img src="<?= get_image_url($profile['logo'] ?? null, 'logo') ?>" alt="Logo <?= esc($profile['school_name'] ?? 'Sekolah') ?>" class="h-12 w-auto object-contain">
+                    <?php if (!empty($profile['logo'])): ?>
+                        <img src="<?= base_url('uploads/profiles/' . $profile['logo']) ?>" alt="Logo" class="h-12 w-auto object-contain">
+                    <?php else: ?>
+                        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                    <?php endif; ?>
                     <div>
                         <span class="block text-base font-black text-white tracking-tight">
                             <?= esc($profile['school_name'] ?? 'SMP Negeri 3 Abiansemal') ?>
