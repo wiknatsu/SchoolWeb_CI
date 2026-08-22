@@ -58,7 +58,7 @@
                             <?php foreach ($highlightedNews as $hNews): ?>
                                 <div class="swiper-slide relative group">
                                     <div class="aspect-[4/3] w-full overflow-hidden relative">
-                                        <img src="<?= get_image_url($hNews['featured_image'], 'news') ?>" alt="<?= esc($hNews['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                        <img src="<?= get_image_url($hNews['featured_image'], 'news') ?>" alt="<?= esc($hNews['title']) ?>" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
                                         <div class="absolute top-4 left-4">
                                             <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-md">
@@ -110,7 +110,7 @@
                     
                     <div class="relative bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 p-3">
                         <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-100">
-                            <img src="<?= get_image_url($profile['principal_photo'] ?? null, 'principal') ?>" alt="Kepala Sekolah" class="w-full h-full object-cover">
+                            <img src="<?= get_image_url($profile['principal_photo'] ?? null, 'principal') ?>" alt="Kepala Sekolah" width="800" height="1066" loading="lazy" decoding="async" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4 text-center">
                             <h3 class="text-lg font-black text-slate-900 leading-tight"><?= esc($profile['principal_name'] ?? 'I Nyoman Budiasa, S.Pd., M.M.') ?></h3>
@@ -324,7 +324,7 @@
                     <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col group hover:-translate-y-1">
                         <!-- Thumbnail -->
                         <div class="aspect-[16/10] overflow-hidden relative bg-slate-100">
-                            <img src="<?= get_image_url($news['featured_image'], 'news') ?>" alt="<?= esc($news['title']) ?>" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <img src="<?= get_image_url($news['featured_image'], 'news') ?>" alt="<?= esc($news['title']) ?>" width="1200" height="750" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <?php if (!empty($news['category_name'])): ?>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-bold bg-white/90 backdrop-blur-sm text-slate-800 shadow-sm">
                                     <?= esc($news['category_name']) ?>
